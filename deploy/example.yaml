@@ -1,0 +1,14 @@
+apiVersion: metricsrouter.io/v1alpha1
+kind: CustomMetricsSource
+metadata:
+  name: test
+spec:
+  service:
+    namespace: custom-metrics
+    name: custom-metrics-apiserver
+    port: 443
+  insecureSkipTLSVerify: true
+  priority: 100
+  metricTypes:
+    - CustomMetrics
+    - ExternalMetrics

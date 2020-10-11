@@ -1,0 +1,46 @@
+run:
+  concurrency: 4
+  timeout: 30s
+  issues-exit-code: 1
+  tests: true
+  skip-dirs:
+  - pkg/client
+
+
+linters:
+  disabled-all: true
+  enable:
+    - deadcode
+    - deadcode
+    - dogsled
+    - dupl
+    - errcheck
+    - exhaustive
+    - exportloopref
+    - funlen
+    - gci
+    - goconst
+    - gocyclo
+    - goimports
+    - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - maligned
+    - megacheck
+    - misspell
+    - staticcheck
+    - structcheck
+    - typecheck
+    - unconvert
+    - unused
+    - varcheck
+
+linters-settings:
+  goimports:
+    local-prefixes: github.com/arjunrn/custom-metrics-router
+  funlen:
+    lines: 100
+    statements: 100
