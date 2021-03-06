@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: custom-metrics-router
+  name: custom-metrics-router
+  namespace: custom-metrics
+spec:
+  selector:
+    matchLabels:
+      app: custom-metrics-router
+  template:
+    metadata:
+      labels:
+        app: custom-metrics-router
+    spec:
+      containers:
+      - image: metrics-router
+        name: metrics-router
+        ports:
+          - containerPort: 6443
